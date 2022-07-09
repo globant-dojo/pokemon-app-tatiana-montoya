@@ -1,0 +1,46 @@
+.pkm-table {
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  background-color: white;
+  border: solid 1px #5f6973;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px 15px;
+}
+
+.pkm-table-div-actions {
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+td span {
+  background: transparent;
+  cursor: pointer;
+  color: #2771df;
+}
+
+.pkm-table-div-img {
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+td img {
+  background: transparent;
+  width: 30px;
+  height: 30px;
+}

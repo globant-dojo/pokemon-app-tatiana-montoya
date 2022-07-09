@@ -1,0 +1,46 @@
+.pkm-form {
+  padding: 50px;
+  background: white;
+  font-weight: bold;
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pkm-form-div-info {
+  display: flex;
+  flex-wrap: wrap;
+  background: transparent;
+  margin-right: 30px;
+  width: 700px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pkm-form-label {
+  margin-left: 20px;
+  width: 100px;
+  background: transparent;
+}
+
+.pkm-form-div-actions {
+  background: transparent;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pkm-form-div-slider {
+  font-weight: normal;
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+  width: 200px;
+  margin-left: -5px;
+}
+
+.pkm-form-slider {
+  margin: 0 5px 0 15px;
+}

@@ -1,0 +1,14 @@
+.pkm-btn{
+  background-color: #2771df;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.pkm-btn span{
+  background: transparent;
+  color: white;
+  padding-right: 5px;
+}

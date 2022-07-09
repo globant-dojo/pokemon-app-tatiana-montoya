@@ -1,0 +1,13 @@
+{
+  "common.attack": "Ataque",
+  "common.cancel": "Cancelar",
+  "common.defense": "Defensa",
+  "common.image": "Imagen",
+  "common.name": "Nombre",
+  "common.new": "Nuevo",
+  "common.save": "Guardar",
+  "common.search": "Buscar",
+  "form.title": "Nuevo Pokemon",
+  "page.title": "Listado de Pokemon",
+  "table.actions": "Acciones"
+}
