@@ -1,6 +1,8 @@
 /* External */
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import store from "./state/configureStore";
 
 /* Components */
 import { PokemonApp } from "./PokemonApp";
@@ -13,8 +15,10 @@ import { PokemonProvider } from "./PokemonProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <PokemonProvider>
-      <PokemonApp />
-    </PokemonProvider>
+    <Provider store={store}>
+      <PokemonProvider>
+        <PokemonApp />
+      </PokemonProvider>
+    </Provider>
   </React.StrictMode>
 );

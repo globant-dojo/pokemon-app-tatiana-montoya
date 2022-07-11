@@ -1,6 +1,6 @@
 /* Components */
 import { render, screen } from "@testing-library/react";
-import { Input } from "./Input";
+import { Input } from ".";
 
 describe("Tests on <Input />", () => {
   const placeholderText = "Buscar";

@@ -7,6 +7,9 @@
   "common.new": "Nuevo",
   "common.save": "Guardar",
   "common.search": "Buscar",
+  "common.loading": "Cargando...",
+  "common.failed": "Hubo un error en la carga",
+  "common.successful": "No se encontraron resultados",
   "form.title": "Nuevo Pokemon",
   "page.title": "Listado de Pokemon",
   "table.actions": "Acciones"
