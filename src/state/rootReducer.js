@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 import { loadingBarReducer } from "react-redux-loading-bar";
 
 /* Reducers */
-import pokemons from "./reducers";
+import pokemons from "./pokemon/reducers";
 
 export default combineReducers({
   loadingBar: loadingBarReducer,

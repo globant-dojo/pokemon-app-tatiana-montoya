@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingBar from "react-redux-loading-bar";
+import { ToastContainer } from "react-toastify";
 
 /* Components */
 import { TopBar } from "@/TopBar";
@@ -9,12 +10,15 @@ import { Modal } from "@/Modal";
 import { PokemonForm } from "@/PokemonForm";
 import { ListPokemon } from "@/ListPokemon";
 
+/* Styles */
+import "react-toastify/dist/ReactToastify.css";
+
 /* Actions */
-import { getAll } from "@/state/actions";
+import { getAll } from "@/state/pokemon/actions";
 
 /* Other */
 import { PokemonContext } from "@/PokemonProvider";
-import { searchPokemonsByKeyword } from "@/utils/misc";
+import { searchPokemonsByKeyword, showMessages } from "@/utils/misc";
 
 export const PokemonApp = () => {
   const { POKEMON_MESSAGES } = React.useContext(PokemonContext);
@@ -25,9 +29,25 @@ export const PokemonApp = () => {
   const [pokemonToEdit, setPokemonToEdit] = useState({});
   const [pokemonsSearched, setPokemonsSearched] = useState(null);
 
-  const { list: pokemons, status: statusGetPokemons } = useSelector(
-    (store) => store.pokemons
-  );
+  const {
+    pokemons: { list: pokemons, status: statusGetPokemons },
+    pokemon: {
+      save: pokemonSaveReducer,
+      edit: pokemonEditReducer,
+      delete: pokemonDeleteReducer,
+    },
+  } = useSelector((store) => store);
+
+  useEffect(() => {
+    showMessages(
+      dispatch,
+      pokemonEditReducer,
+      pokemonSaveReducer,
+      pokemonDeleteReducer,
+      POKEMON_MESSAGES["messages.success"],
+      POKEMON_MESSAGES["messages.error"]
+    );
+  }, [pokemonEditReducer, pokemonSaveReducer, pokemonDeleteReducer]);
 
   useEffect(() => {
     dispatch(getAll());
@@ -49,6 +69,7 @@ export const PokemonApp = () => {
 
   return (
     <>
+      <ToastContainer />
       <LoadingBar style={{ backgroundColor: "blue", height: "5px" }} />
       <h3>{POKEMON_MESSAGES["page.title"]}</h3>
       <TopBar setOpenModal={setOpenModal} onSearchPokemons={onSearchPokemons} />

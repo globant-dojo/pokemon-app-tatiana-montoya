@@ -8,7 +8,7 @@ import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 
 /* Actions */
-import { savePokemon } from "@/state/actions";
+import { savePokemon, editPokemon } from "@/state/pokemon/actions";
 
 /* Styles */
 import "rc-slider/assets/index.css";
@@ -42,7 +42,11 @@ export const PokemonForm = ({ setOpenModal, pokemonToEdit, clearPokemon }) => {
       defense,
     };
 
-    dispatch(savePokemon(pokemonInfo));
+    if (pokemonInfo.id) {
+      dispatch(editPokemon(pokemonInfo));
+    } else {
+      dispatch(savePokemon(pokemonInfo));
+    }
 
     onCloseModal();
   };

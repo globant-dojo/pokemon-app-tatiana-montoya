@@ -14,6 +14,14 @@ export const ACTION_TYPES_SAVE = {
   RESET: "SAVE_RESET",
 };
 
+export const ACTION_TYPES_EDIT = {
+  EDIT: "EDIT",
+  REQUEST: "EDIT_REQUEST",
+  SUCCESS: "EDIT_SUCCESS",
+  FAILURE: "EDIT_FAILURE",
+  RESET: "EDIT_RESET",
+};
+
 export const ACTION_TYPES_DELETE = {
   DELETE: "DELETE",
   REQUEST: "DELETE_REQUEST",
@@ -57,8 +65,9 @@ export const saveRequest = () => {
   return { type: ACTION_TYPES_SAVE.REQUEST };
 };
 
-export const saveSuccess = () => ({
+export const saveSuccess = (pokemon) => ({
   type: ACTION_TYPES_SAVE.SUCCESS,
+  payload: pokemon,
 });
 
 export const saveFailure = (error) => ({
@@ -66,8 +75,33 @@ export const saveFailure = (error) => ({
   payload: { ...error },
 });
 
-export const resetPokemon = () => ({
+export const saveReset = () => ({
   type: ACTION_TYPES_SAVE.RESET,
+});
+
+// EDIT
+
+export const editPokemon = (pokemon) => ({
+  type: ACTION_TYPES_EDIT.EDIT,
+  payload: pokemon,
+});
+
+export const editRequest = () => {
+  return { type: ACTION_TYPES_EDIT.REQUEST };
+};
+
+export const editSuccess = (pokemon) => ({
+  type: ACTION_TYPES_EDIT.SUCCESS,
+  payload: pokemon,
+});
+
+export const editFailure = (error) => ({
+  type: ACTION_TYPES_EDIT.FAILURE,
+  payload: { ...error },
+});
+
+export const editReset = () => ({
+  type: ACTION_TYPES_EDIT.RESET,
 });
 
 // DELETE
@@ -81,8 +115,9 @@ export const deleteRequest = () => {
   return { type: ACTION_TYPES_DELETE.REQUEST };
 };
 
-export const deleteSuccess = () => ({
+export const deleteSuccess = (id) => ({
   type: ACTION_TYPES_DELETE.SUCCESS,
+  payload: id,
 });
 
 export const deleteFailure = (error) => ({

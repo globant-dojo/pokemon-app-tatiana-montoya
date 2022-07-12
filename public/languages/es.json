@@ -2,15 +2,18 @@
   "common.attack": "Ataque",
   "common.cancel": "Cancelar",
   "common.defense": "Defensa",
+  "common.failed": "Hubo un error en la carga",
   "common.image": "Imagen",
+  "common.loading": "Cargando...",
   "common.name": "Nombre",
   "common.new": "Nuevo",
   "common.save": "Guardar",
   "common.search": "Buscar",
-  "common.loading": "Cargando...",
-  "common.failed": "Hubo un error en la carga",
   "common.successful": "No se encontraron resultados",
   "form.title": "Nuevo Pokemon",
+  "messages.error": "Ocurrió un error",
+  "messages.success": "Completado exitosamente",
   "page.title": "Listado de Pokemon",
-  "table.actions": "Acciones"
+  "table.actions": "Acciones",
+  "table.messageToConfirm": "¿Está seguro de eliminar?"
 }

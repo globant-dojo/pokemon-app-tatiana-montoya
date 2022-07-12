@@ -4,7 +4,7 @@ import createSagaMiddleware from "redux-saga";
 
 /* Other */
 import reducer from "./rootReducer";
-import mySaga from "./sagas";
+import mySaga from "./pokemon/sagas";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

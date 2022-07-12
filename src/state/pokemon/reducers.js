@@ -6,6 +6,7 @@ import {
   ACTION_TYPES_GET_ALL,
   ACTION_TYPES_SAVE,
   ACTION_TYPES_DELETE,
+  ACTION_TYPES_EDIT,
 } from "./actions.js";
 
 /* Other */
@@ -13,6 +14,51 @@ import { STATUS_TYPES } from "@/utils/constants.js";
 
 const pokemonsInitialState = { status: STATUS_TYPES.UNLOAD_STATE, list: [] };
 const actionInitialState = { status: STATUS_TYPES.UNLOAD_STATE };
+
+function pokemons(state = pokemonsInitialState, { type, payload }) {
+  switch (type) {
+    case ACTION_TYPES_GET_ALL.REQUEST:
+      return { ...state, status: STATUS_TYPES.INIT_STATE, list: [] };
+    case ACTION_TYPES_GET_ALL.SUCCESS:
+      return {
+        ...state,
+        status: STATUS_TYPES.SUCCEED_STATE,
+        list: payload,
+      };
+    case ACTION_TYPES_DELETE.SUCCESS:
+      const pokemonsFiltered = state.list.filter(
+        (pokemon) => pokemon.id != payload
+      );
+      return {
+        ...state,
+        list: [...pokemonsFiltered],
+      };
+    case ACTION_TYPES_EDIT.SUCCESS: {
+      const pokemonsUpdated = state.list.map((pokemon) => {
+        if (pokemon.id === payload.id) return payload;
+        return pokemon;
+      });
+      return {
+        ...state,
+        list: [...pokemonsUpdated],
+      };
+    }
+    case ACTION_TYPES_SAVE.SUCCESS:
+      const pokemonsUpdated = [...state.list, payload];
+      return {
+        ...state,
+        list: pokemonsUpdated,
+      };
+    case ACTION_TYPES_GET_ALL.FAILURE:
+      return {
+        ...state,
+        status: STATUS_TYPES.FAILED_STATE,
+        error: payload.error,
+      };
+    default:
+      return state;
+  }
+}
 
 export function createBaseReducer(ACTION_TYPES, name, initialStateValues) {
   const initialState = {
@@ -46,13 +92,10 @@ export function createBaseReducer(ACTION_TYPES, name, initialStateValues) {
 }
 
 export default {
-  pokemons: createBaseReducer(
-    ACTION_TYPES_GET_ALL,
-    "list",
-    pokemonsInitialState
-  ),
+  pokemons,
   pokemon: combineReducers({
     save: createBaseReducer(ACTION_TYPES_SAVE, "save", actionInitialState),
+    edit: createBaseReducer(ACTION_TYPES_EDIT, "edit", actionInitialState),
     delete: createBaseReducer(
       ACTION_TYPES_DELETE,
       "delete",

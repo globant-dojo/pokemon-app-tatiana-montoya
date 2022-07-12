@@ -6,3 +6,7 @@
 body {
   padding: 30px;
 }
+
+.Toastify__toast {
+  margin-bottom: 0px;
+}

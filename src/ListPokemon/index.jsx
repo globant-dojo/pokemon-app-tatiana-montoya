@@ -1,9 +1,13 @@
 /* External */
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
+/* Components */
+import { ModalConfirmation } from "@/components/ModalConfirmation";
+import { Modal } from "@/Modal";
+
 /* Actions */
-import { deletePokemon } from "@/state/actions";
+import { deletePokemon } from "@/state/pokemon/actions";
 
 /* Styles */
 import "./ListPokemon.css";
@@ -19,6 +23,9 @@ export const ListPokemon = ({
 }) => {
   const { POKEMON_MESSAGES } = React.useContext(PokemonContext);
 
+  const [openModal, setOpenModal] = useState(false);
+  const [pokemonToDelete, setPokemonToDelete] = useState("");
+
   const dispatch = useDispatch();
 
   const getMessageStatus = () => {
@@ -30,12 +37,27 @@ export const ListPokemon = ({
       return POKEMON_MESSAGES["common.failed"];
   };
 
-  const onDeletePokemon = (id) => {
-    dispatch(deletePokemon(id));
+  const onDeletePokemon = () => {
+    dispatch(deletePokemon(pokemonToDelete));
+    setOpenModal(false);
+  };
+
+  const confirmToDelete = (id) => {
+    setPokemonToDelete(id);
+    setOpenModal(true);
   };
 
   return (
     <>
+      {openModal && (
+        <Modal>
+          <ModalConfirmation
+            message={POKEMON_MESSAGES["table.messageToConfirm"]}
+            setOpenModal={setOpenModal}
+            handleConfirmed={onDeletePokemon}
+          />
+        </Modal>
+      )}
       {!pokemons?.length ? (
         <h3>{getMessageStatus()}</h3>
       ) : (
@@ -68,7 +90,7 @@ export const ListPokemon = ({
                     />
                     <span
                       className="icon-delete"
-                      onClick={() => onDeletePokemon(pokemon.id)}
+                      onClick={() => confirmToDelete(pokemon.id)}
                     />
                   </div>
                 </td>

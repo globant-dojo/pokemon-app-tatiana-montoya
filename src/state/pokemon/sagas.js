@@ -31,16 +31,29 @@ function* savePokemon({ payload: pokemon }) {
   yield put(showLoading());
   yield put(actions.saveRequest());
   try {
-    pokemon.id
-      ? yield call(editPokemonService, pokemon)
-      : yield call(addPokemonService, pokemon);
-    yield put(actions.saveSuccess());
+    const { data: pokemonResult } = yield call(addPokemonService, pokemon);
+
+    yield put(actions.saveSuccess(pokemonResult));
   } catch (error) {
     console.error(`save: ${error}`);
     yield put(actions.addFailure(error.response.data));
   } finally {
     yield put(hideLoading());
-    yield put(actions.getAll());
+  }
+}
+
+function* editPokemon({ payload: pokemon }) {
+  yield put(showLoading());
+  yield put(actions.editRequest());
+  try {
+    const { data: pokemonResult } = yield call(editPokemonService, pokemon);
+
+    yield put(actions.editSuccess(pokemonResult));
+  } catch (error) {
+    console.error(`save: ${error}`);
+    yield put(actions.editFailure(error.response.data));
+  } finally {
+    yield put(hideLoading());
   }
 }
 
@@ -49,13 +62,12 @@ function* deletePokemon({ payload: id }) {
   yield put(actions.deleteRequest());
   try {
     yield call(deletePokemonService, id);
-    yield put(actions.deleteSuccess());
+    yield put(actions.deleteSuccess(id));
   } catch (error) {
     console.error(`delete: ${error}`);
     yield put(actions.deleteFailure(error.response.data));
   } finally {
     yield put(hideLoading());
-    yield put(actions.getAll());
   }
 }
 
@@ -64,5 +76,6 @@ export default function* root() {
     takeLatest(actions.ACTION_TYPES_GET_ALL.GET, getPokemons),
     takeLatest(actions.ACTION_TYPES_SAVE.SAVE, savePokemon),
     takeLatest(actions.ACTION_TYPES_DELETE.DELETE, deletePokemon),
+    takeLatest(actions.ACTION_TYPES_EDIT.EDIT, editPokemon),
   ]);
 }

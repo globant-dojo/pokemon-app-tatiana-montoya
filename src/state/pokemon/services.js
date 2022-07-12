@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const BASE_URL = "https://bp-pokemons.herokuapp.com/";
-const ID_AUTHOR = 1;
+const ID_AUTHOR = 2;
 
 export const getPokemons = () => {
   return axios.get(`${BASE_URL}?idAuthor=${ID_AUTHOR}`, {
@@ -19,15 +19,6 @@ export const addPokemon = (pokemon) => {
     idAuthor: ID_AUTHOR,
     ...pokemon,
   };
-  //   {
-  //     "name": "POKEMON",
-  //     "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png",
-  //     "attack": 100,
-  //     "defense": 97,
-  //     "hp": 1000,
-  //     "type": "Agua",
-  //     "idAuthor": 1
-  // }
 
   return axios.post(BASE_URL, newPokemon, {
     headers: {

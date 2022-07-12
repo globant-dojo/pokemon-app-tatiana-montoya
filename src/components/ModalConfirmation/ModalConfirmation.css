@@ -1,0 +1,20 @@
+.pkm-modal-confirmation {
+  width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pkm-modal-confirmation-p {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.pkm-modal-confirmation button {
+  margin-right: 10px;
+}
