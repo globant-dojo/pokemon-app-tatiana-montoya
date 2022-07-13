@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <ListPokemon /> it should match with the snapshot 1`] = `
+<div>
+  <table
+    class="pkm-table"
+  >
+    <thead>
+      <tr>
+        <th />
+        <th />
+        <th />
+        <th />
+        <th />
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ratataa
+        </td>
+        <td>
+          <div
+            class="pkm-table-div-img"
+          >
+            <img
+              alt=""
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/020.png"
+            />
+          </div>
+        </td>
+        <td>
+          250
+        </td>
+        <td>
+          50
+        </td>
+        <td>
+          <div
+            class="pkm-table-div-actions"
+          >
+            <span
+              class="icon-edit"
+              role="icon-edit"
+            />
+            <span
+              class="icon-delete"
+            />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ratataa
+        </td>
+        <td>
+          <div
+            class="pkm-table-div-img"
+          >
+            <img
+              alt=""
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/020.png"
+            />
+          </div>
+        </td>
+        <td>
+          250
+        </td>
+        <td>
+          50
+        </td>
+        <td>
+          <div
+            class="pkm-table-div-actions"
+          >
+            <span
+              class="icon-edit"
+              role="icon-edit"
+            />
+            <span
+              class="icon-delete"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

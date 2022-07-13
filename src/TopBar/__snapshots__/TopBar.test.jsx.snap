@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on TopBar it should match with the snapshot 1`] = `
+<div>
+  <div
+    class="pkm-topBar"
+  >
+    <div
+      class="pkm-div-input"
+      style="max-width: 300px;"
+    >
+      <span
+        class="icon-search"
+      />
+      <input
+        class="pkm-input"
+        placeholder=""
+      />
+    </div>
+    <button
+      aria-label="btn-new"
+      class="pkm-btn"
+      type="button"
+    >
+      <span
+        class="icon-add"
+      />
+    </button>
+  </div>
+</div>
+`;

@@ -1,7 +1,8 @@
 /* External */
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState } from "react";
 import Slider from "rc-slider";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
 /* Components */
 import { Input } from "@/components/Input";
@@ -105,13 +106,27 @@ export const PokemonForm = ({ setOpenModal, pokemonToEdit, clearPokemon }) => {
         </div>
       </div>
       <div className="pkm-form-div-actions">
-        <Button iconName="icon-create" handleAction={onSavePokemon}>
+        <Button
+          aria-label="btn-create"
+          iconName="icon-create"
+          handleAction={onSavePokemon}
+        >
           {POKEMON_MESSAGES["common.save"]}
         </Button>
-        <Button iconName="icon-cancel" handleAction={onCloseModal}>
+        <Button
+          aria-label="btn-cancel"
+          iconName="icon-cancel"
+          handleAction={onCloseModal}
+        >
           {POKEMON_MESSAGES["common.cancel"]}
         </Button>
       </div>
     </form>
   );
+};
+
+PokemonForm.propTypes = {
+  setOpenModal: PropTypes.func.isRequired,
+  pokemonToEdit: PropTypes.object,
+  clearPokemon: PropTypes.func.isRequired,
 };

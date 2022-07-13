@@ -1,6 +1,7 @@
 /* External */
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
 /* Components */
 import { ModalConfirmation } from "@/components/ModalConfirmation";
@@ -58,6 +59,7 @@ export const ListPokemon = ({
           />
         </Modal>
       )}
+
       {!pokemons?.length ? (
         <h3>{getMessageStatus()}</h3>
       ) : (
@@ -85,6 +87,7 @@ export const ListPokemon = ({
                 <td>
                   <div className="pkm-table-div-actions">
                     <span
+                      role="icon-edit"
                       className="icon-edit"
                       onClick={() => onEditPokemon(pokemon)}
                     />
@@ -101,4 +104,10 @@ export const ListPokemon = ({
       )}
     </>
   );
+};
+
+ListPokemon.propTypes = {
+  statusGetPokemons: PropTypes.string.isRequired,
+  pokemons: PropTypes.array.isRequired,
+  onEditPokemon: PropTypes.func.isRequired,
 };

@@ -1,5 +1,12 @@
 module.exports = {
-  //TODO: jsdom,
-  testEnvironment: "jest-environment-jsdom",
-  setupFiles: ["./jest.setup.js"],
+  roots: ["<rootDir>/src"],
+  clearMocks: true,
+  // collectCoverage: true,
+  // coverageDirectory: "coverage",
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["<rootDir>/config/jest-setup.js"],
+  moduleNameMapper: {
+    "\\.(css|less)$": "<rootDir>/config/css-stub.js",
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
 };

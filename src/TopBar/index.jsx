@@ -1,5 +1,6 @@
 /* External */
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 /* Components */
 import { Button } from "@/components/Button";
@@ -31,9 +32,18 @@ export const TopBar = ({ setOpenModal, onSearchPokemons }) => {
         value={keyword}
         onChange={onChangeKeyword}
       />
-      <Button iconName="icon-add" handleAction={() => setOpenModal(true)}>
+      <Button
+        aria-label="btn-new"
+        iconName="icon-add"
+        handleAction={() => setOpenModal(true)}
+      >
         {POKEMON_MESSAGES["common.new"]}
       </Button>
     </div>
   );
+};
+
+TopBar.propTypes = {
+  setOpenModal: PropTypes.func.isRequired,
+  onSearchPokemons: PropTypes.func.isRequired,
 };

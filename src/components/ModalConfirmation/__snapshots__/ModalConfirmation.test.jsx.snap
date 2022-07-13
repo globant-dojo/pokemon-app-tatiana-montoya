@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <ModalConfirmation /> it should match with the snapshot 1`] = `
+<div>
+  <form
+    class="pkm-modal-confirmation"
+  >
+    <p
+      class="pkm-modal-confirmation-p"
+    >
+      Prueba
+    </p>
+    <button
+      aria-label="btnConfirm"
+      class="pkm-btn"
+      type="button"
+    />
+    <button
+      aria-label="btnCancel"
+      class="pkm-btn"
+      type="button"
+    />
+  </form>
+</div>
+`;
