@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 
 /* Components */
-import { PokemonApp } from "./PokemonApp";
+import { PokemonApp } from ".";
 
 /* Other */
 import { PokemonContext } from "@/PokemonProvider";
