@@ -5,6 +5,11 @@ exports[`Tests on <PokemonForm /> it should match wit the snapshot 1`] = `
   <form
     class="pkm-form"
   >
+    <p
+      class="pkm-form-p"
+    >
+      Pokemon
+    </p>
     <div
       class="pkm-form-div-info"
     >
@@ -20,6 +25,7 @@ exports[`Tests on <PokemonForm /> it should match wit the snapshot 1`] = `
         <input
           class="pkm-input"
           placeholder=""
+          value=""
         />
       </div>
       <label
@@ -73,6 +79,7 @@ exports[`Tests on <PokemonForm /> it should match wit the snapshot 1`] = `
         <input
           class="pkm-input"
           placeholder=""
+          value=""
         />
       </div>
       <label

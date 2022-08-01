@@ -10,7 +10,7 @@ import { Input } from "@/components/Input";
 import "./TopBar.css";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 
 export const TopBar = ({ setOpenModal, onSearchPokemons }) => {
   const { POKEMON_MESSAGES } = React.useContext(PokemonContext);

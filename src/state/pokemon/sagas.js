@@ -50,7 +50,7 @@ function* editPokemon({ payload: pokemon }) {
 
     yield put(actions.editSuccess(pokemonResult));
   } catch (error) {
-    console.error(`save: ${error}`);
+    console.error(`edit: ${error}`);
     yield put(actions.editFailure(error.response.data));
   } finally {
     yield put(hideLoading());

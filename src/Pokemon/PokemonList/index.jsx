@@ -5,19 +5,19 @@ import PropTypes from "prop-types";
 
 /* Components */
 import { ModalConfirmation } from "@/components/ModalConfirmation";
-import { Modal } from "@/Modal";
+import { Modal } from "@/components/Modal";
 
 /* Actions */
 import { deletePokemon } from "@/state/pokemon/actions";
 
 /* Styles */
-import "./ListPokemon.css";
+import "./PokemonList.css";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 import { STATUS_TYPES } from "@/utils/constants.js";
 
-export const ListPokemon = ({
+export const PokemonList = ({
   statusGetPokemons,
   pokemons = [],
   onEditPokemon,
@@ -106,7 +106,7 @@ export const ListPokemon = ({
   );
 };
 
-ListPokemon.propTypes = {
+PokemonList.propTypes = {
   statusGetPokemons: PropTypes.string.isRequired,
   pokemons: PropTypes.array.isRequired,
   onEditPokemon: PropTypes.func.isRequired,

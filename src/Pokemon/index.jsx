@@ -5,10 +5,10 @@ import LoadingBar from "react-redux-loading-bar";
 import { ToastContainer } from "react-toastify";
 
 /* Components */
-import { TopBar } from "@/TopBar";
-import { Modal } from "@/Modal";
-import { PokemonForm } from "@/PokemonForm";
-import { ListPokemon } from "@/ListPokemon";
+import { TopBar } from "@/Pokemon/TopBar";
+import { Modal } from "@/components/Modal";
+import { PokemonForm } from "@/Pokemon/PokemonForm";
+import { PokemonList } from "@/Pokemon/PokemonList";
 
 /* Styles */
 import "react-toastify/dist/ReactToastify.css";
@@ -17,10 +17,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { getAll } from "@/state/pokemon/actions";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 import { searchPokemonsByKeyword, showMessages } from "@/utils/misc";
 
-export const PokemonApp = () => {
+export const Pokemon = () => {
   const { POKEMON_MESSAGES } = React.useContext(PokemonContext);
 
   const dispatch = useDispatch();
@@ -73,7 +73,7 @@ export const PokemonApp = () => {
       <LoadingBar style={{ backgroundColor: "blue", height: "5px" }} />
       <h3>{POKEMON_MESSAGES["page.title"]}</h3>
       <TopBar setOpenModal={setOpenModal} onSearchPokemons={onSearchPokemons} />
-      <ListPokemon
+      <PokemonList
         statusGetPokemons={statusGetPokemons}
         pokemons={pokemonsToShow}
         onEditPokemon={onEditPokemon}

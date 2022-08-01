@@ -3,10 +3,10 @@ import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 
 /* Components */
-import { PokemonApp } from ".";
+import { Pokemon } from ".";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 import store from "@/state/configureStore";
 
 describe("Tests on TopBar", () => {
@@ -14,7 +14,7 @@ describe("Tests on TopBar", () => {
     render(
       <Provider store={store}>
         <PokemonContext.Provider value={{ POKEMON_MESSAGES: {} }}>
-          <PokemonApp />
+          <Pokemon />
         </PokemonContext.Provider>
       </Provider>
     );

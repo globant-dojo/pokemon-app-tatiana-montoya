@@ -9,7 +9,7 @@ import { Button } from "@/components/Button";
 import "./ModalConfirmation.css";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 
 export const ModalConfirmation = ({
   message,

@@ -16,7 +16,7 @@ import "rc-slider/assets/index.css";
 import "./PokemonForm.css";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 
 /* Constants */
 const INPUT_SIZE = 200;
@@ -59,6 +59,7 @@ export const PokemonForm = ({ setOpenModal, pokemonToEdit, clearPokemon }) => {
 
   return (
     <form className="pkm-form">
+      <p className="pkm-form-p">Pokemon</p>
       <div className="pkm-form-div-info">
         <label className="pkm-form-label">{`${POKEMON_MESSAGES["common.name"]}:`}</label>
         <Input

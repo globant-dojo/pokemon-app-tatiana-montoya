@@ -4,13 +4,13 @@ import { Provider } from "react-redux";
 import "@testing-library/jest-dom";
 
 /* Components */
-import { ListPokemon } from ".";
+import { PokemonList } from ".";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 import store from "@/state/configureStore";
 
-describe("Tests on <ListPokemon />", () => {
+describe("Tests on <PokemonList />", () => {
   const onEditPokemon = jest.fn();
   const pokemons = [
     {
@@ -35,7 +35,7 @@ describe("Tests on <ListPokemon />", () => {
     render(
       <Provider store={store}>
         <PokemonContext.Provider value={{ POKEMON_MESSAGES: {} }}>
-          <ListPokemon
+          <PokemonList
             statusGetPokemons={statusGetPokemons}
             pokemons={pokemons}
             onEditPokemon={onEditPokemon}

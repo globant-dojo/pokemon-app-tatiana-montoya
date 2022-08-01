@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { TopBar } from ".";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 import store from "@/state/configureStore";
 
 describe("Tests on TopBar", () => {

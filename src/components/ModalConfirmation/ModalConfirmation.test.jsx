@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 import { ModalConfirmation } from ".";
 
 /* Other */
-import { PokemonContext } from "@/PokemonProvider";
+import { PokemonContext } from "@/Pokemon/PokemonProvider";
 
 describe("Tests on <ModalConfirmation />", () => {
   const message = "Prueba";

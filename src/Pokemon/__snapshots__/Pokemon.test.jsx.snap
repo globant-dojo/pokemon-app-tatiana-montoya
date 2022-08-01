@@ -3,6 +3,21 @@
 exports[`Tests on TopBar it should match with the snapshot 1`] = `
 <div>
   <div
+    class="Toastify"
+  />
+  <div
+    style="direction: ltr;"
+  >
+    <div
+      class=""
+      style="width: 0%; transition: width 800ms linear 0s; will-change: width, opacity; height: 5px; background-color: blue; position: absolute; opacity: 0;"
+    />
+    <div
+      style="display: table; clear: both;"
+    />
+  </div>
+  <h3 />
+  <div
     class="pkm-topBar"
   >
     <div
@@ -15,6 +30,7 @@ exports[`Tests on TopBar it should match with the snapshot 1`] = `
       <input
         class="pkm-input"
         placeholder=""
+        value=""
       />
     </div>
     <button
@@ -27,5 +43,6 @@ exports[`Tests on TopBar it should match with the snapshot 1`] = `
       />
     </button>
   </div>
+  <h3 />
 </div>
 `;

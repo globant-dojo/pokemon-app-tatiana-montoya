@@ -4,7 +4,13 @@ import PropTypes from "prop-types";
 /* Styles */
 import "./Input.css";
 
-export const Input = ({ placeholderText = "", iconName, size, onChange }) => {
+export const Input = ({
+  placeholderText = "",
+  iconName,
+  size,
+  onChange,
+  value,
+}) => {
   return (
     <div className="pkm-div-input" style={{ maxWidth: `${size}px` }}>
       {iconName && <span className={iconName} />}
@@ -12,6 +18,7 @@ export const Input = ({ placeholderText = "", iconName, size, onChange }) => {
         className="pkm-input"
         placeholder={placeholderText}
         onChange={onChange}
+        value={value}
       />
     </div>
   );

@@ -5,19 +5,19 @@ import { Provider } from "react-redux";
 import store from "./state/configureStore";
 
 /* Components */
-import { PokemonApp } from "./PokemonApp";
+import { Pokemon } from "./Pokemon";
 
 /* Styles */
-import "./main.css";
+import "./app.css";
 
 /* Other */
-import { PokemonProvider } from "./PokemonProvider";
+import { PokemonProvider } from "./Pokemon/PokemonProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <PokemonProvider>
-        <PokemonApp />
+        <Pokemon />
       </PokemonProvider>
     </Provider>
   </React.StrictMode>

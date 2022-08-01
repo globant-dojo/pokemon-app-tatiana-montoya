@@ -12,6 +12,7 @@ exports[`Tests on <Input /> it should match with the snapshot 1`] = `
     <input
       class="pkm-input"
       placeholder="Buscar"
+      value=""
     />
   </div>
 </div>
